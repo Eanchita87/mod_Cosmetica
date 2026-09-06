@@ -13,7 +13,8 @@
     "keybinds.KeyMappingAccessor",
     "keybinds.LevelRendererTickMixin",
     "keybinds.OptionsMixin",
-    "snipe.GameRendererMixin"
+    "snipe.GameRendererMixin",
+    "render.AvatarRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

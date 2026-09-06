@@ -1,0 +1,6 @@
+﻿
+Path                                                                                                LineNumber
+----                                                                                                ----------
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java        150
+
+

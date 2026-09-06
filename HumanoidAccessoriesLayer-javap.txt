@@ -1,0 +1,487 @@
+﻿Compiled from "HumanoidAccessoriesLayer.java"
+public class cc.cosmetica.core.render.HumanoidAccessoriesLayer<S extends net.minecraft.class_10034, M extends net.minecraft.class_572<? super S>> extends net.minecraft.class_3887<S, M> {
+  private final net.minecraft.class_10201 equipmentAssets;
+
+  public cc.cosmetica.core.render.HumanoidAccessoriesLayer(net.minecraft.class_3883<S, M>, net.minecraft.class_10201);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokespecial #48                 // Method net/minecraft/class_3887."<init>":(Lnet/minecraft/class_3883;)V
+       5: aload_0
+       6: aload_2
+       7: putfield      #50                 // Field equipmentAssets:Lnet/minecraft/class_10201;
+      10: return
+
+  public void submit(net.minecraft.class_4587, net.minecraft.class_11659, int, S, float, float);
+    Code:
+       0: aload         4
+       2: getfield      #70                 // Field net/minecraft/class_10034.field_53461:Z
+       5: ifeq          9
+       8: return
+       9: invokestatic  #76                 // Method net/minecraft/class_10209.method_64146:()Lnet/minecraft/class_3695;
+      12: astore        7
+      14: aload         7
+      16: ldc           #78                 // String accessories
+      18: invokeinterface #84,  2           // InterfaceMethod net/minecraft/class_3695.method_15396:(Ljava/lang/String;)V
+      23: aload         4
+      25: invokestatic  #90                 // InterfaceMethod cc/cosmetica/core/api/Cosmetics.getCosmetics:(Lnet/minecraft/class_10042;)Ljava/util/Optional;
+      28: aload_0
+      29: aload         4
+      31: aload_1
+      32: aload_2
+      33: iload_3
+      34: invokedynamic #110,  0            // InvokeDynamic #0:accept:(Lcc/cosmetica/core/render/HumanoidAccessoriesLayer;Lnet/minecraft/class_10034;Lnet/minecraft/class_4587;Lnet/minecraft/class_11659;I)Ljava/util/function/Consumer;
+      39: invokevirtual #116                // Method java/util/Optional.ifPresent:(Ljava/util/function/Consumer;)V
+      42: aload         7
+      44: invokeinterface #120,  1          // InterfaceMethod net/minecraft/class_3695.method_15407:()V
+      49: return
+
+  private void renderAccessory(cc.cosmetica.core.api.Accessory, net.minecraft.class_4587, net.minecraft.class_11659, int, boolean, net.minecraft.class_10034);
+    Code:
+       0: aload         6
+       2: getfield      #137                // Field net/minecraft/class_10034.field_53418:Lnet/minecraft/class_1799;
+       5: getstatic     #141                // Field net/minecraft/class_10186$class_10190.field_54127:Lnet/minecraft/class_10186$class_10190;
+       8: aload_0
+       9: getfield      #50                 // Field equipmentAssets:Lnet/minecraft/class_10201;
+      12: invokestatic  #145                // Method hasLayer:(Lnet/minecraft/class_1799;Lnet/minecraft/class_10186$class_10190;Lnet/minecraft/class_10201;)Z
+      15: istore        7
+      17: aload_1
+      18: new           #10                 // class cc/cosmetica/core/render/HumanoidAccessoriesLayer$HumanoidRenderEquipper
+      21: dup
+      22: aload         6
+      24: invokespecial #148                // Method cc/cosmetica/core/render/HumanoidAccessoriesLayer$HumanoidRenderEquipper."<init>":(Lnet/minecraft/class_10034;)V
+      27: iload         5
+      29: iload         7
+      31: invokestatic  #152                // Method canRenderAccessory:(Lcc/cosmetica/core/api/Accessory;Lcc/cosmetica/core/render/HumanoidAccessoriesLayer$ArmourEquipper;ZZ)Z
+      34: ifne          38
+      37: return
+      38: aconst_null
+      39: astore        8
+      41: fconst_0
+      42: fstore        9
+      44: getstatic     #156                // Field cc/cosmetica/core/render/HumanoidAccessoriesLayer$1.$SwitchMap$gg$cloaks$javaclient$model$Accessory$AttachmentEnum:[I
+      47: aload_1
+      48: invokevirtual #160                // Method cc/cosmetica/core/api/Accessory.getAttachment:()Lgg/cloaks/javaclient/model/Accessory$AttachmentEnum;
+      51: invokevirtual #164                // Method gg/cloaks/javaclient/model/Accessory$AttachmentEnum.ordinal:()I
+      54: iaload
+      55: tableswitch   { // 1 to 7
+
+                     1: 96
+
+                     2: 111
+
+                     3: 126
+
+                     4: 193
+
+                     5: 260
+
+                     6: 295
+
+                     7: 330
+               default: 352
+          }
+      96: aload_0
+      97: invokevirtual #168                // Method method_17165:()Lnet/minecraft/class_583;
+     100: checkcast     #170                // class net/minecraft/class_572
+     103: getfield      #174                // Field net/minecraft/class_572.field_3398:Lnet/minecraft/class_630;
+     106: astore        8
+     108: goto          352
+     111: aload_0
+     112: invokevirtual #168                // Method method_17165:()Lnet/minecraft/class_583;
+     115: checkcast     #170                // class net/minecraft/class_572
+     118: getfield      #177                // Field net/minecraft/class_572.field_3391:Lnet/minecraft/class_630;
+     121: astore        8
+     123: goto          352
+     126: aload_1
+     127: invokevirtual #181                // Method cc/cosmetica/core/api/Accessory.isMirrored:()Z
+     130: ifeq          146
+     133: aload_0
+     134: invokevirtual #168                // Method method_17165:()Lnet/minecraft/class_583;
+     137: checkcast     #170                // class net/minecraft/class_572
+     140: getfield      #184                // Field net/minecraft/class_572.field_3401:Lnet/minecraft/class_630;
+     143: goto          156
+     146: aload_0
+     147: invokevirtual #168                // Method method_17165:()Lnet/minecraft/class_583;
+     150: checkcast     #170                // class net/minecraft/class_572
+     153: getfield      #187                // Field net/minecraft/class_572.field_27433:Lnet/minecraft/class_630;
+     156: astore        8
+     158: aload_0
+     159: invokevirtual #168                // Method method_17165:()Lnet/minecraft/class_583;
+     162: instanceof    #191                // class net/minecraft/class_591
+     165: ifeq          352
+     168: aload_0
+     169: invokevirtual #168                // Method method_17165:()Lnet/minecraft/class_583;
+     172: checkcast     #193                // class cc/cosmetica/core/mixin/PlayerModelAccessor
+     175: invokeinterface #196,  1          // InterfaceMethod cc/cosmetica/core/mixin/PlayerModelAccessor.isSlim:()Z
+     180: ifeq          352
+     183: fload         9
+     185: ldc           #197                // float 0.03125f
+     187: fadd
+     188: fstore        9
+     190: goto          352
+     193: aload_1
+     194: invokevirtual #181                // Method cc/cosmetica/core/api/Accessory.isMirrored:()Z
+     197: ifeq          213
+     200: aload_0
+     201: invokevirtual #168                // Method method_17165:()Lnet/minecraft/class_583;
+     204: checkcast     #170                // class net/minecraft/class_572
+     207: getfield      #187                // Field net/minecraft/class_572.field_27433:Lnet/minecraft/class_630;
+     210: goto          223
+     213: aload_0
+     214: invokevirtual #168                // Method method_17165:()Lnet/minecraft/class_583;
+     217: checkcast     #170                // class net/minecraft/class_572
+     220: getfield      #184                // Field net/minecraft/class_572.field_3401:Lnet/minecraft/class_630;
+     223: astore        8
+     225: aload_0
+     226: invokevirtual #168                // Method method_17165:()Lnet/minecraft/class_583;
+     229: instanceof    #191                // class net/minecraft/class_591
+     232: ifeq          352
+     235: aload_0
+     236: invokevirtual #168                // Method method_17165:()Lnet/minecraft/class_583;
+     239: checkcast     #193                // class cc/cosmetica/core/mixin/PlayerModelAccessor
+     242: invokeinterface #196,  1          // InterfaceMethod cc/cosmetica/core/mixin/PlayerModelAccessor.isSlim:()Z
+     247: ifeq          352
+     250: fload         9
+     252: ldc           #197                // float 0.03125f
+     254: fsub
+     255: fstore        9
+     257: goto          352
+     260: aload_1
+     261: invokevirtual #181                // Method cc/cosmetica/core/api/Accessory.isMirrored:()Z
+     264: ifeq          280
+     267: aload_0
+     268: invokevirtual #168                // Method method_17165:()Lnet/minecraft/class_583;
+     271: checkcast     #170                // class net/minecraft/class_572
+     274: getfield      #200                // Field net/minecraft/class_572.field_3392:Lnet/minecraft/class_630;
+     277: goto          290
+     280: aload_0
+     281: invokevirtual #168                // Method method_17165:()Lnet/minecraft/class_583;
+     284: checkcast     #170                // class net/minecraft/class_572
+     287: getfield      #203                // Field net/minecraft/class_572.field_3397:Lnet/minecraft/class_630;
+     290: astore        8
+     292: goto          352
+     295: aload_1
+     296: invokevirtual #181                // Method cc/cosmetica/core/api/Accessory.isMirrored:()Z
+     299: ifeq          315
+     302: aload_0
+     303: invokevirtual #168                // Method method_17165:()Lnet/minecraft/class_583;
+     306: checkcast     #170                // class net/minecraft/class_572
+     309: getfield      #203                // Field net/minecraft/class_572.field_3397:Lnet/minecraft/class_630;
+     312: goto          325
+     315: aload_0
+     316: invokevirtual #168                // Method method_17165:()Lnet/minecraft/class_583;
+     319: checkcast     #170                // class net/minecraft/class_572
+     322: getfield      #200                // Field net/minecraft/class_572.field_3392:Lnet/minecraft/class_630;
+     325: astore        8
+     327: goto          352
+     330: invokestatic  #209                // Method cc/cosmetica/core/impl/Logging.getInstance:()Lcc/cosmetica/core/impl/Logging;
+     333: ldc           #211                // String attachment_unknown_accessory
+     335: ldc           #213                // String Unknown attachment for accessory: {}
+     337: iconst_1
+     338: anewarray     #215                // class java/lang/Object
+     341: dup
+     342: iconst_0
+     343: aload_1
+     344: invokevirtual #219                // Method cc/cosmetica/core/api/Accessory.getName:()Ljava/lang/String;
+     347: aastore
+     348: invokevirtual #223                // Method cc/cosmetica/core/impl/Logging.warnOnce:(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+     351: return
+     352: aload_1
+     353: invokevirtual #231                // Method cc/cosmetica/core/api/Accessory.getOffset:()Lnet/minecraft/class_243;
+     356: astore        10
+     358: aload         8
+     360: getfield      #234                // Field net/minecraft/class_630.field_3665:Z
+     363: ifeq          404
+     366: aload_1
+     367: invokevirtual #238                // Method cc/cosmetica/core/api/Accessory.getModel:()Lcc/cosmetica/core/api/CosmeticaModel;
+     370: aload         8
+     372: aload_2
+     373: aload_3
+     374: iload         4
+     376: aload         10
+     378: getfield      #244                // Field net/minecraft/class_243.field_1352:D
+     381: d2f
+     382: fload         9
+     384: fadd
+     385: aload         10
+     387: getfield      #247                // Field net/minecraft/class_243.field_1351:D
+     390: d2f
+     391: aload         10
+     393: getfield      #250                // Field net/minecraft/class_243.field_1350:D
+     396: d2f
+     397: aload_1
+     398: invokevirtual #181                // Method cc/cosmetica/core/api/Accessory.isMirrored:()Z
+     401: invokevirtual #256                // Method cc/cosmetica/core/api/CosmeticaModel.submitOnPart:(Lnet/minecraft/class_630;Lnet/minecraft/class_4587;Lnet/minecraft/class_11659;IFFFZ)V
+     404: return
+
+  public static boolean hasLayer(net.minecraft.class_1799, net.minecraft.class_10186$class_10190, net.minecraft.class_10201);
+    Code:
+       0: aload_0
+       1: getstatic     #270                // Field net/minecraft/class_9334.field_54196:Lnet/minecraft/class_9331;
+       4: invokevirtual #276                // Method net/minecraft/class_1799.method_58694:(Lnet/minecraft/class_9331;)Ljava/lang/Object;
+       7: checkcast     #278                // class net/minecraft/class_10192
+      10: astore_3
+      11: aload_3
+      12: ifnull        61
+      15: aload_3
+      16: invokevirtual #282                // Method net/minecraft/class_10192.comp_3176:()Ljava/util/Optional;
+      19: invokevirtual #285                // Method java/util/Optional.isEmpty:()Z
+      22: ifne          61
+      25: aload_2
+      26: aload_3
+      27: invokevirtual #282                // Method net/minecraft/class_10192.comp_3176:()Ljava/util/Optional;
+      30: invokevirtual #289                // Method java/util/Optional.get:()Ljava/lang/Object;
+      33: checkcast     #291                // class net/minecraft/class_5321
+      36: invokevirtual #297                // Method net/minecraft/class_10201.method_64087:(Lnet/minecraft/class_5321;)Lnet/minecraft/class_10186;
+      39: astore        4
+      41: aload         4
+      43: aload_1
+      44: invokevirtual #301                // Method net/minecraft/class_10186.method_63996:(Lnet/minecraft/class_10186$class_10190;)Ljava/util/List;
+      47: invokeinterface #304,  1          // InterfaceMethod java/util/List.isEmpty:()Z
+      52: ifne          59
+      55: iconst_1
+      56: goto          60
+      59: iconst_0
+      60: ireturn
+      61: iconst_0
+      62: ireturn
+
+  public static boolean canRenderAccessory(cc.cosmetica.core.api.Accessory, cc.cosmetica.core.render.HumanoidAccessoriesLayer$ArmourEquipper, boolean, boolean);
+    Code:
+       0: aload_0
+       1: invokevirtual #314                // Method cc/cosmetica/core/api/Accessory.getFlags:()Ljava/util/Collection;
+       4: astore        4
+       6: aload         4
+       8: getstatic     #318                // Field cc/cosmetica/core/api/Accessory$Flag.HIDE_WITH_HELMET:Lcc/cosmetica/core/api/Accessory$Flag;
+      11: invokeinterface #324,  2          // InterfaceMethod java/util/Collection.contains:(Ljava/lang/Object;)Z
+      16: ifeq          33
+      19: aload_1
+      20: getstatic     #330                // Field net/minecraft/class_1304.field_6169:Lnet/minecraft/class_1304;
+      23: invokeinterface #334,  2          // InterfaceMethod cc/cosmetica/core/render/HumanoidAccessoriesLayer$ArmourEquipper.hasItemInSlot:(Lnet/minecraft/class_1304;)Z
+      28: ifeq          33
+      31: iconst_0
+      32: ireturn
+      33: aload_1
+      34: getstatic     #337                // Field net/minecraft/class_1304.field_6174:Lnet/minecraft/class_1304;
+      37: invokeinterface #334,  2          // InterfaceMethod cc/cosmetica/core/render/HumanoidAccessoriesLayer$ArmourEquipper.hasItemInSlot:(Lnet/minecraft/class_1304;)Z
+      42: ifeq          79
+      45: iload_3
+      46: ifeq          64
+      49: aload         4
+      51: getstatic     #340                // Field cc/cosmetica/core/api/Accessory$Flag.HIDE_WITH_ELYTRA:Lcc/cosmetica/core/api/Accessory$Flag;
+      54: invokeinterface #324,  2          // InterfaceMethod java/util/Collection.contains:(Ljava/lang/Object;)Z
+      59: ifeq          79
+      62: iconst_0
+      63: ireturn
+      64: aload         4
+      66: getstatic     #343                // Field cc/cosmetica/core/api/Accessory$Flag.HIDE_WITH_CHESTPLATE:Lcc/cosmetica/core/api/Accessory$Flag;
+      69: invokeinterface #324,  2          // InterfaceMethod java/util/Collection.contains:(Ljava/lang/Object;)Z
+      74: ifeq          79
+      77: iconst_0
+      78: ireturn
+      79: iload_2
+      80: ifeq          102
+      83: iload_3
+      84: ifne          102
+      87: aload         4
+      89: getstatic     #346                // Field cc/cosmetica/core/api/Accessory$Flag.HIDE_WITH_CLOAK:Lcc/cosmetica/core/api/Accessory$Flag;
+      92: invokeinterface #324,  2          // InterfaceMethod java/util/Collection.contains:(Ljava/lang/Object;)Z
+      97: ifeq          102
+     100: iconst_0
+     101: ireturn
+     102: aload         4
+     104: getstatic     #349                // Field cc/cosmetica/core/api/Accessory$Flag.HIDE_WITH_LEGGINGS:Lcc/cosmetica/core/api/Accessory$Flag;
+     107: invokeinterface #324,  2          // InterfaceMethod java/util/Collection.contains:(Ljava/lang/Object;)Z
+     112: ifeq          129
+     115: aload_1
+     116: getstatic     #352                // Field net/minecraft/class_1304.field_6172:Lnet/minecraft/class_1304;
+     119: invokeinterface #334,  2          // InterfaceMethod cc/cosmetica/core/render/HumanoidAccessoriesLayer$ArmourEquipper.hasItemInSlot:(Lnet/minecraft/class_1304;)Z
+     124: ifeq          129
+     127: iconst_0
+     128: ireturn
+     129: aload         4
+     131: getstatic     #355                // Field cc/cosmetica/core/api/Accessory$Flag.HIDE_WITH_BOOTS:Lcc/cosmetica/core/api/Accessory$Flag;
+     134: invokeinterface #324,  2          // InterfaceMethod java/util/Collection.contains:(Ljava/lang/Object;)Z
+     139: ifeq          156
+     142: aload_1
+     143: getstatic     #358                // Field net/minecraft/class_1304.field_6166:Lnet/minecraft/class_1304;
+     146: invokeinterface #334,  2          // InterfaceMethod cc/cosmetica/core/render/HumanoidAccessoriesLayer$ArmourEquipper.hasItemInSlot:(Lnet/minecraft/class_1304;)Z
+     151: ifeq          156
+     154: iconst_0
+     155: ireturn
+     156: aload         4
+     158: getstatic     #361                // Field cc/cosmetica/core/api/Accessory$Flag.HIDE_WITH_PARROT:Lcc/cosmetica/core/api/Accessory$Flag;
+     161: invokeinterface #324,  2          // InterfaceMethod java/util/Collection.contains:(Ljava/lang/Object;)Z
+     166: ifeq          418
+     169: aload_1
+     170: invokeinterface #364,  1          // InterfaceMethod cc/cosmetica/core/render/HumanoidAccessoriesLayer$ArmourEquipper.hasLeftShoulderEntity:()Z
+     175: ifne          187
+     178: aload_1
+     179: invokeinterface #367,  1          // InterfaceMethod cc/cosmetica/core/render/HumanoidAccessoriesLayer$ArmourEquipper.hasRightShoulderEntity:()Z
+     184: ifeq          418
+     187: aconst_null
+     188: astore        5
+     190: getstatic     #156                // Field cc/cosmetica/core/render/HumanoidAccessoriesLayer$1.$SwitchMap$gg$cloaks$javaclient$model$Accessory$AttachmentEnum:[I
+     193: aload_0
+     194: invokevirtual #160                // Method cc/cosmetica/core/api/Accessory.getAttachment:()Lgg/cloaks/javaclient/model/Accessory$AttachmentEnum;
+     197: invokevirtual #164                // Method gg/cloaks/javaclient/model/Accessory$AttachmentEnum.ordinal:()I
+     200: iaload
+     201: tableswitch   { // 1 to 7
+
+                     1: 244
+
+                     2: 244
+
+                     3: 331
+
+                     4: 352
+
+                     5: 331
+
+                     6: 352
+
+                     7: 370
+               default: 370
+          }
+     244: aload_0
+     245: invokevirtual #238                // Method cc/cosmetica/core/api/Accessory.getModel:()Lcc/cosmetica/core/api/CosmeticaModel;
+     248: invokevirtual #371                // Method cc/cosmetica/core/api/CosmeticaModel.getBoundingBox:()Lnet/minecraft/class_238;
+     251: invokevirtual #376                // Method net/minecraft/class_238.method_1005:()Lnet/minecraft/class_243;
+     254: astore        6
+     256: aload_0
+     257: invokevirtual #231                // Method cc/cosmetica/core/api/Accessory.getOffset:()Lnet/minecraft/class_243;
+     260: astore        7
+     262: aload         6
+     264: getfield      #244                // Field net/minecraft/class_243.field_1352:D
+     267: ldc2_w        #377                // double 8.0d
+     270: dsub
+     271: aload         7
+     273: getfield      #244                // Field net/minecraft/class_243.field_1352:D
+     276: ldc2_w        #379                // double 16.0d
+     279: dmul
+     280: dadd
+     281: dstore        8
+     283: dload         8
+     285: invokestatic  #386                // Method java/lang/Math.abs:(D)D
+     288: ldc2_w        #387                // double 0.5d
+     291: dcmpl
+     292: ifle          370
+     295: dload         8
+     297: ldc2_w        #377                // double 8.0d
+     300: dcmpg
+     301: ifge          308
+     304: iconst_1
+     305: goto          309
+     308: iconst_0
+     309: aload_0
+     310: invokevirtual #181                // Method cc/cosmetica/core/api/Accessory.isMirrored:()Z
+     313: ixor
+     314: ifeq          323
+     317: getstatic     #394                // Field net/minecraft/class_1306.field_6182:Lnet/minecraft/class_1306;
+     320: goto          326
+     323: getstatic     #397                // Field net/minecraft/class_1306.field_6183:Lnet/minecraft/class_1306;
+     326: astore        5
+     328: goto          370
+     331: aload_0
+     332: invokevirtual #181                // Method cc/cosmetica/core/api/Accessory.isMirrored:()Z
+     335: ifeq          344
+     338: getstatic     #397                // Field net/minecraft/class_1306.field_6183:Lnet/minecraft/class_1306;
+     341: goto          347
+     344: getstatic     #394                // Field net/minecraft/class_1306.field_6182:Lnet/minecraft/class_1306;
+     347: astore        5
+     349: goto          370
+     352: aload_0
+     353: invokevirtual #181                // Method cc/cosmetica/core/api/Accessory.isMirrored:()Z
+     356: ifeq          365
+     359: getstatic     #394                // Field net/minecraft/class_1306.field_6182:Lnet/minecraft/class_1306;
+     362: goto          368
+     365: getstatic     #397                // Field net/minecraft/class_1306.field_6183:Lnet/minecraft/class_1306;
+     368: astore        5
+     370: aload         5
+     372: ifnull        383
+     375: aload         5
+     377: getstatic     #394                // Field net/minecraft/class_1306.field_6182:Lnet/minecraft/class_1306;
+     380: if_acmpne     394
+     383: aload_1
+     384: invokeinterface #364,  1          // InterfaceMethod cc/cosmetica/core/render/HumanoidAccessoriesLayer$ArmourEquipper.hasLeftShoulderEntity:()Z
+     389: ifeq          394
+     392: iconst_0
+     393: ireturn
+     394: aload         5
+     396: ifnull        407
+     399: aload         5
+     401: getstatic     #397                // Field net/minecraft/class_1306.field_6183:Lnet/minecraft/class_1306;
+     404: if_acmpne     418
+     407: aload_1
+     408: invokeinterface #367,  1          // InterfaceMethod cc/cosmetica/core/render/HumanoidAccessoriesLayer$ArmourEquipper.hasRightShoulderEntity:()Z
+     413: ifeq          418
+     416: iconst_0
+     417: ireturn
+     418: iconst_1
+     419: ireturn
+
+  public void method_4199(net.minecraft.class_4587, net.minecraft.class_11659, int, net.minecraft.class_10017, float, float);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: aload_2
+       3: iload_3
+       4: aload         4
+       6: checkcast     #66                 // class net/minecraft/class_10034
+       9: fload         5
+      11: fload         6
+      13: invokevirtual #408                // Method submit:(Lnet/minecraft/class_4587;Lnet/minecraft/class_11659;ILnet/minecraft/class_10034;FF)V
+      16: return
+
+  private void lambda$submit$0(net.minecraft.class_10034, net.minecraft.class_4587, net.minecraft.class_11659, int, cc.cosmetica.core.api.Cosmetics);
+    Code:
+       0: aload         5
+       2: invokeinterface #412,  1          // InterfaceMethod cc/cosmetica/core/api/Cosmetics.getCloak:()Ljava/util/Optional;
+       7: invokevirtual #415                // Method java/util/Optional.isPresent:()Z
+      10: ifne          37
+      13: aload_1
+      14: instanceof    #417                // class net/minecraft/class_10055
+      17: ifeq          62
+      20: aload_1
+      21: checkcast     #417                // class net/minecraft/class_10055
+      24: astore        8
+      26: aload         8
+      28: getfield      #421                // Field net/minecraft/class_10055.field_53520:Lnet/minecraft/class_8685;
+      31: invokevirtual #427                // Method net/minecraft/class_8685.comp_1627:()Lnet/minecraft/class_12079$class_12081;
+      34: ifnull        62
+      37: aload_1
+      38: instanceof    #417                // class net/minecraft/class_10055
+      41: ifeq          58
+      44: aload_1
+      45: checkcast     #417                // class net/minecraft/class_10055
+      48: astore        7
+      50: aload         7
+      52: getfield      #430                // Field net/minecraft/class_10055.field_53532:Z
+      55: ifeq          62
+      58: iconst_1
+      59: goto          63
+      62: iconst_0
+      63: istore        6
+      65: aload         5
+      67: invokeinterface #433,  1          // InterfaceMethod cc/cosmetica/core/api/Cosmetics.getAccessories:()Ljava/util/Collection;
+      72: invokeinterface #437,  1          // InterfaceMethod java/util/Collection.iterator:()Ljava/util/Iterator;
+      77: astore        7
+      79: aload         7
+      81: invokeinterface #442,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+      86: ifeq          117
+      89: aload         7
+      91: invokeinterface #445,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+      96: checkcast     #28                 // class cc/cosmetica/core/api/Accessory
+      99: astore        8
+     101: aload_0
+     102: aload         8
+     104: aload_2
+     105: aload_3
+     106: iload         4
+     108: iload         6
+     110: aload_1
+     111: invokevirtual #447                // Method renderAccessory:(Lcc/cosmetica/core/api/Accessory;Lnet/minecraft/class_4587;Lnet/minecraft/class_11659;IZLnet/minecraft/class_10034;)V
+     114: goto          79
+     117: return
+}

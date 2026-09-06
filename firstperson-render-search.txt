@@ -1,0 +1,11 @@
+﻿
+Path                                                                                                 LineNumber
+----                                                                                                 ----------
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\mixin\gui\FakePlayerRendererMixin.java         26
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\mixin\gui\FakePlayerRendererMixin.java         39
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\mixin\gui\FakePlayerRendererMixin.java         40
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\mixin\snipe\GameRendererMixin.java             21
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\mixin\snipe\GameRendererMixin.java             29
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\mixin\snipe\GameRendererMixin.java             30
+
+

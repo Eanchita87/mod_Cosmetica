@@ -1,0 +1,19 @@
+﻿Compiled from "Accessory.java"
+public final class gg.cloaks.javaclient.model.Accessory$AttachmentEnum extends java.lang.Enum<gg.cloaks.javaclient.model.Accessory$AttachmentEnum> {
+  public static final gg.cloaks.javaclient.model.Accessory$AttachmentEnum HEAD;
+  public static final gg.cloaks.javaclient.model.Accessory$AttachmentEnum BODY;
+  public static final gg.cloaks.javaclient.model.Accessory$AttachmentEnum LEFT_ARM;
+  public static final gg.cloaks.javaclient.model.Accessory$AttachmentEnum RIGHT_ARM;
+  public static final gg.cloaks.javaclient.model.Accessory$AttachmentEnum LEFT_LEG;
+  public static final gg.cloaks.javaclient.model.Accessory$AttachmentEnum RIGHT_LEG;
+  public static final gg.cloaks.javaclient.model.Accessory$AttachmentEnum UNKNOWN_DEFAULT_OPEN_API;
+  private java.lang.String value;
+  private static final gg.cloaks.javaclient.model.Accessory$AttachmentEnum[] $VALUES;
+  public static gg.cloaks.javaclient.model.Accessory$AttachmentEnum[] values();
+  public static gg.cloaks.javaclient.model.Accessory$AttachmentEnum valueOf(java.lang.String);
+  private gg.cloaks.javaclient.model.Accessory$AttachmentEnum(java.lang.String);
+  public java.lang.String getValue();
+  public java.lang.String toString();
+  public static gg.cloaks.javaclient.model.Accessory$AttachmentEnum fromValue(java.lang.String);
+  static {};
+}

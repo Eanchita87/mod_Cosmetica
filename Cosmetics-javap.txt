@@ -1,0 +1,88 @@
+﻿Compiled from "Cosmetics.java"
+public interface cc.cosmetica.core.api.Cosmetics {
+  public abstract java.util.Optional<java.lang.String> getOutfitName();
+
+  public abstract java.util.Optional<java.lang.String> getOutfitId();
+
+  public abstract java.util.Optional<cc.cosmetica.core.api.ImageCosmetic> getCloak();
+
+  public abstract java.util.Optional<cc.cosmetica.core.api.ImageCosmetic> getElytra();
+
+  public abstract java.util.Collection<cc.cosmetica.core.api.Accessory> getAccessories();
+
+  public abstract cc.cosmetica.core.api.NametagConfig getNametag();
+
+  public abstract java.util.Optional<cc.cosmetica.core.api.NametagConfig> getLore();
+
+  public abstract boolean isUpsideDown();
+
+  public abstract void enqueue(java.lang.Runnable, java.lang.Runnable);
+
+  public static java.util.Optional<cc.cosmetica.core.api.Cosmetics> getCosmetics(net.minecraft.class_1309);
+    Code:
+       0: aload_0
+       1: checkcast     #34                 // class cc/cosmetica/core/impl/CosmeticEquipper
+       4: astore_1
+       5: aload_1
+       6: invokeinterface #37,  1           // InterfaceMethod cc/cosmetica/core/impl/CosmeticEquipper.cosmeticacore$getCosmetics:()Ljava/util/Optional;
+      11: areturn
+
+  public static java.util.Optional<cc.cosmetica.core.api.Cosmetics> getCosmetics(net.minecraft.class_640);
+    Code:
+       0: aload_0
+       1: checkcast     #34                 // class cc/cosmetica/core/impl/CosmeticEquipper
+       4: astore_1
+       5: aload_1
+       6: invokeinterface #37,  1           // InterfaceMethod cc/cosmetica/core/impl/CosmeticEquipper.cosmeticacore$getCosmetics:()Ljava/util/Optional;
+      11: areturn
+
+  public static java.util.Optional<cc.cosmetica.core.api.Cosmetics> getCosmetics(net.minecraft.class_10042);
+    Code:
+       0: aload_0
+       1: checkcast     #49                 // class cc/cosmetica/core/impl/HasCosmeticsRenderState
+       4: astore_1
+       5: aload_1
+       6: invokeinterface #50,  1           // InterfaceMethod cc/cosmetica/core/impl/HasCosmeticsRenderState.cosmeticacore$getCosmetics:()Ljava/util/Optional;
+      11: areturn
+
+  public static void updateCosmetics(net.minecraft.class_1309, cc.cosmetica.core.api.CosmeticManager);
+    Code:
+       0: aload_0
+       1: checkcast     #34                 // class cc/cosmetica/core/impl/CosmeticEquipper
+       4: astore_2
+       5: aload_2
+       6: aload_1
+       7: invokeinterface #60,  2           // InterfaceMethod cc/cosmetica/core/impl/CosmeticEquipper.cosmeticacore$updateCosmetics:(Lcc/cosmetica/core/api/CosmeticManager;)V
+      12: return
+
+  public static void registerCosmeticsChangeCallback(java.util.function.BiConsumer<cc.cosmetica.core.api.CosmeticManager$Either, cc.cosmetica.core.api.Cosmetics>);
+    Code:
+       0: aload_0
+       1: invokestatic  #72                 // Method cc/cosmetica/core/impl/MasterCosmeticManager.addCallback:(Ljava/util/function/BiConsumer;)V
+       4: return
+
+  public static void registerSelfDataFetchCallback(java.util.function.BiConsumer<gg.cloaks.javaclient.model.PlayerResponse, cc.cosmetica.core.api.Cosmetics>);
+    Code:
+       0: aload_0
+       1: invokestatic  #80                 // Method cc/cosmetica/core/impl/MasterCosmeticManager.addSelfCallback:(Ljava/util/function/BiConsumer;)V
+       4: return
+
+  public static void configureOwnNametag(boolean, boolean);
+    Code:
+       0: iload_0
+       1: iload_1
+       2: invokestatic  #90                 // Method cc/cosmetica/core/impl/NametagRenderer.configureThirdPersonNametag:(ZZ)V
+       5: return
+
+  public static void configureArmourStandArms(boolean);
+    Code:
+       0: iload_0
+       1: putstatic     #97                 // Field cc/cosmetica/core/impl/MasterCosmeticManager.armourStandArms:Z
+       4: return
+
+  public static void configureHideOfficialCapes(boolean);
+    Code:
+       0: iload_0
+       1: putstatic     #101                // Field cc/cosmetica/core/impl/MasterCosmeticManager.hideVanillaCapes:Z
+       4: return
+}

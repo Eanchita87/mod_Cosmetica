@@ -1,0 +1,466 @@
+﻿Compiled from "CosmeticaModel.java"
+public final class cc.cosmetica.core.api.CosmeticaModel {
+  private final net.minecraft.class_2960 texture;
+
+  private net.minecraft.class_10889 model;
+
+  private net.minecraft.class_793 unbakedModel;
+
+  private net.minecraft.class_238 boundingBox;
+
+  private boolean textureLoaded;
+
+  private static final org.joml.Vector3f YP;
+
+  private static final net.minecraft.class_238 ZERO_BOUNDS;
+
+  public cc.cosmetica.core.api.CosmeticaModel(net.minecraft.class_2960);
+    Code:
+       0: aload_0
+       1: invokespecial #36                 // Method java/lang/Object."<init>":()V
+       4: aload_0
+       5: aload_1
+       6: putfield      #38                 // Field texture:Lnet/minecraft/class_2960;
+       9: aload_0
+      10: getstatic     #40                 // Field ZERO_BOUNDS:Lnet/minecraft/class_238;
+      13: putfield      #42                 // Field boundingBox:Lnet/minecraft/class_238;
+      16: return
+
+  public synchronized void setTextureLoaded();
+    Code:
+       0: aload_0
+       1: iconst_1
+       2: putfield      #47                 // Field textureLoaded:Z
+       5: invokestatic  #53                 // Method cc/cosmetica/core/impl/Logging.getInstance:()Lcc/cosmetica/core/impl/Logging;
+       8: getstatic     #59                 // Field cc/cosmetica/core/impl/LoggingCategory.ASSETS:Lcc/cosmetica/core/impl/LoggingCategory;
+      11: ldc           #61                 // String Model: texture finished loading for {}
+      13: iconst_1
+      14: anewarray     #4                  // class java/lang/Object
+      17: dup
+      18: iconst_0
+      19: aload_0
+      20: getfield      #38                 // Field texture:Lnet/minecraft/class_2960;
+      23: aastore
+      24: invokevirtual #65                 // Method cc/cosmetica/core/impl/Logging.debug:(Lcc/cosmetica/core/impl/LoggingCategory;Ljava/lang/String;[Ljava/lang/Object;)V
+      27: aload_0
+      28: getfield      #67                 // Field unbakedModel:Lnet/minecraft/class_793;
+      31: astore_1
+      32: aload_1
+      33: ifnull        41
+      36: aload_0
+      37: aload_1
+      38: invokevirtual #71                 // Method startBaking:(Lnet/minecraft/class_793;)V
+      41: return
+
+  public synchronized void setModel(net.minecraft.class_793, net.minecraft.class_238);
+    Code:
+       0: aload_1
+       1: aload_0
+       2: getfield      #38                 // Field texture:Lnet/minecraft/class_2960;
+       5: invokestatic  #82                 // Method java/lang/String.valueOf:(Ljava/lang/Object;)Ljava/lang/String;
+       8: invokedynamic #94,  0             // InvokeDynamic #0:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+      13: invokestatic  #100                // Method java/util/Objects.requireNonNull:(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+      16: pop
+      17: aload_0
+      18: aload_1
+      19: putfield      #67                 // Field unbakedModel:Lnet/minecraft/class_793;
+      22: aload_0
+      23: aload_2
+      24: putfield      #42                 // Field boundingBox:Lnet/minecraft/class_238;
+      27: aload_0
+      28: getfield      #47                 // Field textureLoaded:Z
+      31: ifeq          39
+      34: aload_0
+      35: aload_1
+      36: invokevirtual #71                 // Method startBaking:(Lnet/minecraft/class_793;)V
+      39: return
+
+  private void startBaking(net.minecraft.class_793);
+    Code:
+       0: invokestatic  #53                 // Method cc/cosmetica/core/impl/Logging.getInstance:()Lcc/cosmetica/core/impl/Logging;
+       3: getstatic     #59                 // Field cc/cosmetica/core/impl/LoggingCategory.ASSETS:Lcc/cosmetica/core/impl/LoggingCategory;
+       6: ldc           #102                // String Scheduling baking for {}
+       8: iconst_1
+       9: anewarray     #4                  // class java/lang/Object
+      12: dup
+      13: iconst_0
+      14: aload_0
+      15: getfield      #38                 // Field texture:Lnet/minecraft/class_2960;
+      18: aastore
+      19: invokevirtual #65                 // Method cc/cosmetica/core/impl/Logging.debug:(Lcc/cosmetica/core/impl/LoggingCategory;Ljava/lang/String;[Ljava/lang/Object;)V
+      22: invokestatic  #108                // Method net/minecraft/class_310.method_1551:()Lnet/minecraft/class_310;
+      25: aload_0
+      26: aload_1
+      27: invokedynamic #124,  0            // InvokeDynamic #1:run:(Lcc/cosmetica/core/api/CosmeticaModel;Lnet/minecraft/class_793;)Ljava/lang/Runnable;
+      32: invokevirtual #128                // Method net/minecraft/class_310.method_63588:(Ljava/lang/Runnable;)V
+      35: return
+
+  public net.minecraft.class_2960 getTexture();
+    Code:
+       0: aload_0
+       1: getfield      #38                 // Field texture:Lnet/minecraft/class_2960;
+       4: areturn
+
+  public net.minecraft.class_10889 getBakedModel();
+    Code:
+       0: aload_0
+       1: getfield      #135                // Field model:Lnet/minecraft/class_10889;
+       4: areturn
+
+  public net.minecraft.class_238 getBoundingBox();
+    Code:
+       0: aload_0
+       1: getfield      #42                 // Field boundingBox:Lnet/minecraft/class_238;
+       4: areturn
+
+  public void renderOnPart(net.minecraft.class_630, net.minecraft.class_4587, net.minecraft.class_4597, int, float, float, float, boolean);
+    Code:
+       0: aload_0
+       1: invokevirtual #149                // Method getBakedModel:()Lnet/minecraft/class_10889;
+       4: astore        9
+       6: aload         9
+       8: ifnonnull     12
+      11: return
+      12: aload_2
+      13: invokevirtual #156                // Method net/minecraft/class_4587.method_22903:()V
+      16: fconst_1
+      17: fstore        10
+      19: aload_1
+      20: aload_2
+      21: invokevirtual #162                // Method net/minecraft/class_630.method_22703:(Lnet/minecraft/class_4587;)V
+      24: aload_2
+      25: fload         10
+      27: fload         10
+      29: fneg
+      30: fload         10
+      32: fneg
+      33: invokevirtual #166                // Method net/minecraft/class_4587.method_22905:(FFF)V
+      36: iload         8
+      38: ifeq          49
+      41: aload_2
+      42: ldc           #167                // float -1.0f
+      44: fconst_1
+      45: fconst_1
+      46: invokevirtual #166                // Method net/minecraft/class_4587.method_22905:(FFF)V
+      49: aload_2
+      50: new           #169                // class org/joml/Quaternionf
+      53: dup
+      54: new           #171                // class org/joml/AxisAngle4f
+      57: dup
+      58: ldc           #172                // float 3.1415927f
+      60: getstatic     #174                // Field YP:Lorg/joml/Vector3f;
+      63: invokespecial #177                // Method org/joml/AxisAngle4f."<init>":(FLorg/joml/Vector3fc;)V
+      66: invokespecial #180                // Method org/joml/Quaternionf."<init>":(Lorg/joml/AxisAngle4f;)V
+      69: invokevirtual #184                // Method net/minecraft/class_4587.method_22907:(Lorg/joml/Quaternionfc;)V
+      72: aload_2
+      73: fload         5
+      75: fload         6
+      77: fload         7
+      79: invokevirtual #187                // Method net/minecraft/class_4587.method_46416:(FFF)V
+      82: aload_2
+      83: ldc2_w        #188                // double -0.5d
+      86: ldc2_w        #190                // double -0.25d
+      89: ldc2_w        #188                // double -0.5d
+      92: invokevirtual #195                // Method net/minecraft/class_4587.method_22904:(DDD)V
+      95: aload         9
+      97: aload_2
+      98: aload_3
+      99: aload_0
+     100: invokevirtual #197                // Method getTexture:()Lnet/minecraft/class_2960;
+     103: iload         4
+     105: invokestatic  #203                // Method cc/cosmetica/core/impl/CosmeticaModelBakery.renderModel:(Lnet/minecraft/class_10889;Lnet/minecraft/class_4587;Lnet/minecraft/class_4597;Lnet/minecraft/class_2960;I)V
+     108: aload_2
+     109: invokevirtual #206                // Method net/minecraft/class_4587.method_22909:()V
+     112: return
+
+  public void submitOnPart(net.minecraft.class_630, net.minecraft.class_4587, net.minecraft.class_11659, int, float, float, float, boolean);
+    Code:
+       0: aload_0
+       1: invokevirtual #149                // Method getBakedModel:()Lnet/minecraft/class_10889;
+       4: astore        9
+       6: aload         9
+       8: ifnonnull     12
+      11: return
+      12: aload_2
+      13: invokevirtual #156                // Method net/minecraft/class_4587.method_22903:()V
+      16: fconst_1
+      17: fstore        10
+      19: aload_1
+      20: aload_2
+      21: invokevirtual #162                // Method net/minecraft/class_630.method_22703:(Lnet/minecraft/class_4587;)V
+      24: aload_2
+      25: fload         10
+      27: fload         10
+      29: fneg
+      30: fload         10
+      32: fneg
+      33: invokevirtual #166                // Method net/minecraft/class_4587.method_22905:(FFF)V
+      36: iload         8
+      38: ifeq          49
+      41: aload_2
+      42: ldc           #167                // float -1.0f
+      44: fconst_1
+      45: fconst_1
+      46: invokevirtual #166                // Method net/minecraft/class_4587.method_22905:(FFF)V
+      49: aload_2
+      50: new           #169                // class org/joml/Quaternionf
+      53: dup
+      54: new           #171                // class org/joml/AxisAngle4f
+      57: dup
+      58: ldc           #172                // float 3.1415927f
+      60: getstatic     #174                // Field YP:Lorg/joml/Vector3f;
+      63: invokespecial #177                // Method org/joml/AxisAngle4f."<init>":(FLorg/joml/Vector3fc;)V
+      66: invokespecial #180                // Method org/joml/Quaternionf."<init>":(Lorg/joml/AxisAngle4f;)V
+      69: invokevirtual #184                // Method net/minecraft/class_4587.method_22907:(Lorg/joml/Quaternionfc;)V
+      72: aload_2
+      73: fload         5
+      75: fload         6
+      77: fload         7
+      79: invokevirtual #187                // Method net/minecraft/class_4587.method_46416:(FFF)V
+      82: aload_2
+      83: ldc2_w        #188                // double -0.5d
+      86: ldc2_w        #190                // double -0.25d
+      89: ldc2_w        #188                // double -0.5d
+      92: invokevirtual #195                // Method net/minecraft/class_4587.method_22904:(DDD)V
+      95: aload_3
+      96: aload_2
+      97: aload_0
+      98: invokevirtual #197                // Method getTexture:()Lnet/minecraft/class_2960;
+     101: invokestatic  #221                // Method net/minecraft/class_12249.method_75978:(Lnet/minecraft/class_2960;)Lnet/minecraft/class_1921;
+     104: new           #223                // class net/minecraft/class_10893
+     107: dup
+     108: aload         9
+     110: invokespecial #226                // Method net/minecraft/class_10893."<init>":(Lnet/minecraft/class_10889;)V
+     113: fconst_1
+     114: fconst_1
+     115: fconst_1
+     116: iload         4
+     118: getstatic     #231                // Field net/minecraft/class_4608.field_21444:I
+     121: iconst_0
+     122: invokeinterface #237,  10         // InterfaceMethod net/minecraft/class_11659.method_73484:(Lnet/minecraft/class_4587;Lnet/minecraft/class_1921;Lnet/minecraft/class_1087;FFFIII)V
+     127: aload_2
+     128: invokevirtual #206                // Method net/minecraft/class_4587.method_22909:()V
+     131: return
+
+  public static cc.cosmetica.core.api.CosmeticaModel getOrCreateModel(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, int, int);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: aload_2
+       3: invokedynamic #252,  0            // InvokeDynamic #2:makeConcatWithConstants:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+       8: aload_3
+       9: invokedynamic #265,  0            // InvokeDynamic #3:get:(Ljava/lang/String;)Ljava/util/function/Supplier;
+      14: aload         4
+      16: iload         5
+      18: iload         6
+      20: invokestatic  #270                // Method cc/cosmetica/core/impl/BlockModelManager.getOrCreateModel:(Ljava/lang/String;Ljava/lang/String;Ljava/util/function/Supplier;Ljava/lang/String;II)Lcc/cosmetica/core/api/CosmeticaModel;
+      23: areturn
+
+  public static cc.cosmetica.core.api.CosmeticaModel getOrCreateModel(java.lang.String, java.lang.String, java.lang.String, cc.cosmetica.core.api.CosmeticaModel$InputStreamSupplier, java.lang.String, int, int);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: aload_2
+       3: invokedynamic #252,  0            // InvokeDynamic #2:makeConcatWithConstants:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+       8: aload_3
+       9: aload_0
+      10: invokedynamic #280,  0            // InvokeDynamic #4:get:(Lcc/cosmetica/core/api/CosmeticaModel$InputStreamSupplier;Ljava/lang/String;)Ljava/util/function/Supplier;
+      15: aload         4
+      17: iload         5
+      19: iload         6
+      21: invokestatic  #270                // Method cc/cosmetica/core/impl/BlockModelManager.getOrCreateModel:(Ljava/lang/String;Ljava/lang/String;Ljava/util/function/Supplier;Ljava/lang/String;II)Lcc/cosmetica/core/api/CosmeticaModel;
+      24: areturn
+
+  public static cc.cosmetica.core.api.CachedImage getOrCreateImage(java.lang.String, java.lang.String, cc.cosmetica.core.api.texture.CosmeticaTexture$Builder);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokedynamic #252,  0            // InvokeDynamic #2:makeConcatWithConstants:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+       7: aload_2
+       8: invokestatic  #287                // Method cc/cosmetica/core/impl/BlockModelManager.getOrCreateImage:(Ljava/lang/String;Lcc/cosmetica/core/api/texture/CosmeticaTexture$Builder;)Lcc/cosmetica/core/api/CachedImage;
+      11: areturn
+
+  public static cc.cosmetica.core.api.CosmeticaModel getOrCreateCosmeticaModel(java.lang.String, java.lang.String, java.lang.String, int, int);
+    Code:
+       0: aload_0
+       1: aload_2
+       2: invokestatic  #292                // Method textureId:(Ljava/lang/String;)Ljava/lang/String;
+       5: invokedynamic #295,  0            // InvokeDynamic #5:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+      10: aload_1
+      11: invokedynamic #300,  0            // InvokeDynamic #6:get:(Ljava/lang/String;)Ljava/util/function/Supplier;
+      16: aload_2
+      17: iload_3
+      18: iload         4
+      20: invokestatic  #270                // Method cc/cosmetica/core/impl/BlockModelManager.getOrCreateModel:(Ljava/lang/String;Ljava/lang/String;Ljava/util/function/Supplier;Ljava/lang/String;II)Lcc/cosmetica/core/api/CosmeticaModel;
+      23: areturn
+
+  public static cc.cosmetica.core.api.CachedImage getOrCreateCosmeticaImage(gg.cloaks.javaclient.model.AnimatedTextureCosmetic);
+    Code:
+       0: aload_0
+       1: invokevirtual #308                // Method gg/cloaks/javaclient/model/AnimatedTextureCosmetic.getTexture:()Ljava/lang/String;
+       4: ldc_w         #310                // String Cannot create image for cosmetic with null texture.
+       7: invokestatic  #100                // Method java/util/Objects.requireNonNull:(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+      10: pop
+      11: aload_0
+      12: invokevirtual #308                // Method gg/cloaks/javaclient/model/AnimatedTextureCosmetic.getTexture:()Ljava/lang/String;
+      15: invokestatic  #292                // Method textureId:(Ljava/lang/String;)Ljava/lang/String;
+      18: astore_1
+      19: aload_1
+      20: invokedynamic #295,  0            // InvokeDynamic #5:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+      25: new           #10                 // class cc/cosmetica/core/api/texture/CosmeticaTexture$Builder
+      28: dup
+      29: aload_0
+      30: invokevirtual #308                // Method gg/cloaks/javaclient/model/AnimatedTextureCosmetic.getTexture:()Ljava/lang/String;
+      33: getstatic     #313                // Field cc/cosmetica/core/impl/BlockModelManager.FALLBACK_TEXTURE:Lnet/minecraft/class_2960;
+      36: invokespecial #316                // Method cc/cosmetica/core/api/texture/CosmeticaTexture$Builder."<init>":(Ljava/lang/String;Lnet/minecraft/class_2960;)V
+      39: aload_0
+      40: invokevirtual #320                // Method gg/cloaks/javaclient/model/AnimatedTextureCosmetic.getFrames:()Ljava/math/BigDecimal;
+      43: invokevirtual #326                // Method java/math/BigDecimal.intValue:()I
+      46: aload_0
+      47: invokevirtual #329                // Method gg/cloaks/javaclient/model/AnimatedTextureCosmetic.getTicksPerFrame:()Ljava/math/BigDecimal;
+      50: invokevirtual #326                // Method java/math/BigDecimal.intValue:()I
+      53: invokevirtual #332                // Method cc/cosmetica/core/api/texture/CosmeticaTexture$Builder.frames:(II)Lcc/cosmetica/core/api/texture/CosmeticaTexture$Builder;
+      56: invokestatic  #287                // Method cc/cosmetica/core/impl/BlockModelManager.getOrCreateImage:(Ljava/lang/String;Lcc/cosmetica/core/api/texture/CosmeticaTexture$Builder;)Lcc/cosmetica/core/api/CachedImage;
+      59: areturn
+
+  public static cc.cosmetica.core.api.CachedImage getOrCreateCosmeticaImage(cc.cosmetica.core.api.texture.CosmeticaTexture$Builder);
+    Code:
+       0: aload_0
+       1: invokevirtual #337                // Method cc/cosmetica/core/api/texture/CosmeticaTexture$Builder.getURL:()Ljava/lang/String;
+       4: invokestatic  #292                // Method textureId:(Ljava/lang/String;)Ljava/lang/String;
+       7: invokedynamic #295,  0            // InvokeDynamic #5:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+      12: aload_0
+      13: invokestatic  #287                // Method cc/cosmetica/core/impl/BlockModelManager.getOrCreateImage:(Ljava/lang/String;Lcc/cosmetica/core/api/texture/CosmeticaTexture$Builder;)Lcc/cosmetica/core/api/CachedImage;
+      16: areturn
+
+  public static java.lang.String textureId(java.lang.String);
+    Code:
+       0: aload_0
+       1: ldc_w         #339                // String /
+       4: invokevirtual #343                // Method java/lang/String.split:(Ljava/lang/String;)[Ljava/lang/String;
+       7: astore_1
+       8: aload_1
+       9: aload_1
+      10: arraylength
+      11: iconst_1
+      12: isub
+      13: aaload
+      14: astore_2
+      15: aload_2
+      16: ldc_w         #345                // String \\.
+      19: invokevirtual #343                // Method java/lang/String.split:(Ljava/lang/String;)[Ljava/lang/String;
+      22: astore_1
+      23: aload_1
+      24: iconst_0
+      25: aaload
+      26: invokedynamic #295,  0            // InvokeDynamic #5:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+      31: areturn
+
+  private static java.util.concurrent.CompletableFuture lambda$getOrCreateCosmeticaModel$4(java.lang.String);
+    Code:
+       0: aload_0
+       1: invokestatic  #353                // Method cc/cosmetica/core/api/CosmeticaAPI.downloadAsync:(Ljava/lang/String;)Ljava/util/concurrent/CompletableFuture;
+       4: areturn
+
+  private static java.util.concurrent.CompletableFuture lambda$getOrCreateModel$3(cc.cosmetica.core.api.CosmeticaModel$InputStreamSupplier, java.lang.String);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokedynamic #360,  0            // InvokeDynamic #7:get:(Lcc/cosmetica/core/api/CosmeticaModel$InputStreamSupplier;Ljava/lang/String;)Ljava/util/function/Supplier;
+       7: invokestatic  #366                // Method java/util/concurrent/CompletableFuture.supplyAsync:(Ljava/util/function/Supplier;)Ljava/util/concurrent/CompletableFuture;
+      10: areturn
+
+  private static java.lang.String lambda$getOrCreateModel$2(cc.cosmetica.core.api.CosmeticaModel$InputStreamSupplier, java.lang.String);
+    Code:
+       0: new           #372                // class java/io/BufferedReader
+       3: dup
+       4: new           #374                // class java/io/InputStreamReader
+       7: dup
+       8: aload_0
+       9: invokeinterface #378,  1          // InterfaceMethod cc/cosmetica/core/api/CosmeticaModel$InputStreamSupplier.open:()Ljava/io/InputStream;
+      14: invokespecial #381                // Method java/io/InputStreamReader."<init>":(Ljava/io/InputStream;)V
+      17: invokespecial #384                // Method java/io/BufferedReader."<init>":(Ljava/io/Reader;)V
+      20: astore_2
+      21: aload_2
+      22: invokevirtual #388                // Method java/io/BufferedReader.lines:()Ljava/util/stream/Stream;
+      25: ldc_w         #390                // String \n
+      28: invokestatic  #396                // Method java/util/stream/Collectors.joining:(Ljava/lang/CharSequence;)Ljava/util/stream/Collector;
+      31: invokeinterface #402,  2          // InterfaceMethod java/util/stream/Stream.collect:(Ljava/util/stream/Collector;)Ljava/lang/Object;
+      36: checkcast     #78                 // class java/lang/String
+      39: astore_3
+      40: aload_2
+      41: invokevirtual #405                // Method java/io/BufferedReader.close:()V
+      44: aload_3
+      45: areturn
+      46: astore_3
+      47: aload_2
+      48: invokevirtual #405                // Method java/io/BufferedReader.close:()V
+      51: goto          62
+      54: astore        4
+      56: aload_3
+      57: aload         4
+      59: invokevirtual #409                // Method java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
+      62: aload_3
+      63: athrow
+      64: astore_2
+      65: new           #411                // class java/io/UncheckedIOException
+      68: dup
+      69: aload_1
+      70: invokedynamic #414,  0            // InvokeDynamic #8:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+      75: aload_2
+      76: invokespecial #417                // Method java/io/UncheckedIOException."<init>":(Ljava/lang/String;Ljava/io/IOException;)V
+      79: athrow
+    Exception table:
+       from    to  target type
+          21    40    46   Class java/lang/Throwable
+          47    51    54   Class java/lang/Throwable
+           0    44    64   Class java/io/IOException
+          46    64    64   Class java/io/IOException
+
+  private static java.util.concurrent.CompletableFuture lambda$getOrCreateModel$1(java.lang.String);
+    Code:
+       0: aload_0
+       1: invokestatic  #353                // Method cc/cosmetica/core/api/CosmeticaAPI.downloadAsync:(Ljava/lang/String;)Ljava/util/concurrent/CompletableFuture;
+       4: areturn
+
+  private void lambda$startBaking$0(net.minecraft.class_793);
+    Code:
+       0: aload_0
+       1: aload_0
+       2: getfield      #38                 // Field texture:Lnet/minecraft/class_2960;
+       5: aload_1
+       6: invokestatic  #425                // Method cc/cosmetica/core/impl/CosmeticaModelBakery.bakeModel:(Lnet/minecraft/class_2960;Lnet/minecraft/class_793;)Lnet/minecraft/class_10889;
+       9: putfield      #135                // Field model:Lnet/minecraft/class_10889;
+      12: aload_0
+      13: aconst_null
+      14: putfield      #67                 // Field unbakedModel:Lnet/minecraft/class_793;
+      17: invokestatic  #53                 // Method cc/cosmetica/core/impl/Logging.getInstance:()Lcc/cosmetica/core/impl/Logging;
+      20: getstatic     #59                 // Field cc/cosmetica/core/impl/LoggingCategory.ASSETS:Lcc/cosmetica/core/impl/LoggingCategory;
+      23: ldc_w         #427                // String Baked model {}
+      26: iconst_1
+      27: anewarray     #4                  // class java/lang/Object
+      30: dup
+      31: iconst_0
+      32: aload_0
+      33: getfield      #38                 // Field texture:Lnet/minecraft/class_2960;
+      36: aastore
+      37: invokevirtual #65                 // Method cc/cosmetica/core/impl/Logging.debug:(Lcc/cosmetica/core/impl/LoggingCategory;Ljava/lang/String;[Ljava/lang/Object;)V
+      40: return
+
+  static {};
+    Code:
+       0: new           #430                // class org/joml/Vector3f
+       3: dup
+       4: fconst_0
+       5: fconst_1
+       6: fconst_0
+       7: invokespecial #432                // Method org/joml/Vector3f."<init>":(FFF)V
+      10: putstatic     #174                // Field YP:Lorg/joml/Vector3f;
+      13: getstatic     #438                // Field net/minecraft/class_243.field_1353:Lnet/minecraft/class_243;
+      16: dconst_0
+      17: dconst_0
+      18: dconst_0
+      19: invokestatic  #444                // Method net/minecraft/class_238.method_30048:(Lnet/minecraft/class_243;DDD)Lnet/minecraft/class_238;
+      22: putstatic     #40                 // Field ZERO_BOUNDS:Lnet/minecraft/class_238;
+      25: return
+}

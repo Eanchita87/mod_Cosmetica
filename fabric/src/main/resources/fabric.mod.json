@@ -3,12 +3,14 @@
   "id": "cosmetica",
   "version": "${version}",
   "name": "Cosmetica",
-  "description": "Custom Cosmetics for Free, Forever!",
+  "description": "Custom Cosmetics for Free, Forever : edit by Chita!❤️",
   "authors": [
     "Valoeghese",
     "Eyezah"
   ],
   "contact": {
+    "👉Telegram group": "https://t.me/sellaccountminecraft",
+    "👉Telegram me": "https://t.me/chitaean",
     "sources": "https://github.com/Cosmetica-cc/cosmetica-2",
     "issues": "https://github.com/Cosmetica-cc/cosmetica-2/issues"
   },

@@ -1,0 +1,110 @@
+﻿Compiled from "CosmeticaModel.java"
+public final class cc.cosmetica.core.api.CosmeticaModel {
+  private final net.minecraft.class_2960 texture;
+  private net.minecraft.class_10889 model;
+  private net.minecraft.class_793 unbakedModel;
+  private net.minecraft.class_238 boundingBox;
+  private boolean textureLoaded;
+  private static final org.joml.Vector3f YP;
+  private static final net.minecraft.class_238 ZERO_BOUNDS;
+  public cc.cosmetica.core.api.CosmeticaModel(net.minecraft.class_2960);
+  public synchronized void setTextureLoaded();
+  public synchronized void setModel(net.minecraft.class_793, net.minecraft.class_238);
+  private void startBaking(net.minecraft.class_793);
+  public net.minecraft.class_2960 getTexture();
+  public net.minecraft.class_10889 getBakedModel();
+  public net.minecraft.class_238 getBoundingBox();
+  public void renderOnPart(net.minecraft.class_630, net.minecraft.class_4587, net.minecraft.class_4597, int, float, float, float, boolean);
+  public void submitOnPart(net.minecraft.class_630, net.minecraft.class_4587, net.minecraft.class_11659, int, float, float, float, boolean);
+  public static cc.cosmetica.core.api.CosmeticaModel getOrCreateModel(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, int, int);
+  public static cc.cosmetica.core.api.CosmeticaModel getOrCreateModel(java.lang.String, java.lang.String, java.lang.String, cc.cosmetica.core.api.CosmeticaModel$InputStreamSupplier, java.lang.String, int, int);
+  public static cc.cosmetica.core.api.CachedImage getOrCreateImage(java.lang.String, java.lang.String, cc.cosmetica.core.api.texture.CosmeticaTexture$Builder);
+  public static cc.cosmetica.core.api.CosmeticaModel getOrCreateCosmeticaModel(java.lang.String, java.lang.String, java.lang.String, int, int);
+  public static cc.cosmetica.core.api.CachedImage getOrCreateCosmeticaImage(gg.cloaks.javaclient.model.AnimatedTextureCosmetic);
+  public static cc.cosmetica.core.api.CachedImage getOrCreateCosmeticaImage(cc.cosmetica.core.api.texture.CosmeticaTexture$Builder);
+  public static java.lang.String textureId(java.lang.String);
+  private static java.util.concurrent.CompletableFuture lambda$getOrCreateCosmeticaModel$4(java.lang.String);
+  private static java.util.concurrent.CompletableFuture lambda$getOrCreateModel$3(cc.cosmetica.core.api.CosmeticaModel$InputStreamSupplier, java.lang.String);
+  private static java.lang.String lambda$getOrCreateModel$2(cc.cosmetica.core.api.CosmeticaModel$InputStreamSupplier, java.lang.String);
+  private static java.util.concurrent.CompletableFuture lambda$getOrCreateModel$1(java.lang.String);
+  private void lambda$startBaking$0(net.minecraft.class_793);
+  static {};
+}
+Compiled from "Accessory.java"
+public class cc.cosmetica.core.api.Accessory implements cc.cosmetica.core.api.Cosmetic {
+  private final gg.cloaks.javaclient.model.Accessory jsonObject;
+  private final com.mojang.authlib.GameProfile creator;
+  private final cc.cosmetica.core.api.CosmeticaModel model;
+  protected net.minecraft.class_243 offset;
+  protected boolean mirrored;
+  private final java.util.Collection<cc.cosmetica.core.api.Accessory$Flag> flags;
+  private final java.util.Collection<cc.cosmetica.core.api.Accessory$Flag> defaultFlags;
+  public cc.cosmetica.core.api.Accessory(gg.cloaks.javaclient.model.Accessory, com.mojang.authlib.GameProfile, java.util.OptionalInt, boolean, cc.cosmetica.core.api.CosmeticaModel, net.minecraft.class_243);
+  public gg.cloaks.javaclient.model.Accessory getJsonObject();
+  public java.lang.String getName();
+  public java.lang.String getId();
+  public java.util.Optional<com.mojang.authlib.GameProfile> getCreator();
+  public java.util.Optional<java.lang.String> getThumbnail();
+  public gg.cloaks.javaclient.model.Accessory$AttachmentEnum getAttachment();
+  public cc.cosmetica.core.api.CosmeticaModel getModel();
+  public boolean isMirrored();
+  public net.minecraft.class_243 getOffset();
+  public java.util.Collection<cc.cosmetica.core.api.Accessory$Flag> getFlags();
+  public java.util.Collection<cc.cosmetica.core.api.Accessory$Flag> getDefaultFlags();
+  public static cc.cosmetica.core.api.Accessory fromOutfitAccessory(gg.cloaks.javaclient.model.OutfitAccessory);
+  public static cc.cosmetica.core.api.Accessory$Adjustable fromAccessory(gg.cloaks.javaclient.model.Accessory);
+  public static net.minecraft.class_243 attachmentTransform(gg.cloaks.javaclient.model.Accessory$AttachmentEnum, double, double, double);
+}
+Compiled from "Cosmetics.java"
+public interface cc.cosmetica.core.api.Cosmetics {
+  public abstract java.util.Optional<java.lang.String> getOutfitName();
+  public abstract java.util.Optional<java.lang.String> getOutfitId();
+  public abstract java.util.Optional<cc.cosmetica.core.api.ImageCosmetic> getCloak();
+  public abstract java.util.Optional<cc.cosmetica.core.api.ImageCosmetic> getElytra();
+  public abstract java.util.Collection<cc.cosmetica.core.api.Accessory> getAccessories();
+  public abstract cc.cosmetica.core.api.NametagConfig getNametag();
+  public abstract java.util.Optional<cc.cosmetica.core.api.NametagConfig> getLore();
+  public abstract boolean isUpsideDown();
+  public abstract void enqueue(java.lang.Runnable, java.lang.Runnable);
+  public static java.util.Optional<cc.cosmetica.core.api.Cosmetics> getCosmetics(net.minecraft.class_1309);
+  public static java.util.Optional<cc.cosmetica.core.api.Cosmetics> getCosmetics(net.minecraft.class_640);
+  public static java.util.Optional<cc.cosmetica.core.api.Cosmetics> getCosmetics(net.minecraft.class_10042);
+  public static void updateCosmetics(net.minecraft.class_1309, cc.cosmetica.core.api.CosmeticManager);
+  public static void registerCosmeticsChangeCallback(java.util.function.BiConsumer<cc.cosmetica.core.api.CosmeticManager$Either, cc.cosmetica.core.api.Cosmetics>);
+  public static void registerSelfDataFetchCallback(java.util.function.BiConsumer<gg.cloaks.javaclient.model.PlayerResponse, cc.cosmetica.core.api.Cosmetics>);
+  public static void configureOwnNametag(boolean, boolean);
+  public static void configureArmourStandArms(boolean);
+  public static void configureHideOfficialCapes(boolean);
+}
+Compiled from "PlayerCosmetics.java"
+public final class cc.cosmetica.core.api.PlayerCosmetics implements cc.cosmetica.core.api.Cosmetics {
+  private final java.util.Optional<cc.cosmetica.core.api.ImageCosmetic> cloak;
+  private final java.util.Optional<cc.cosmetica.core.api.ImageCosmetic> elytra;
+  private final java.util.Collection<cc.cosmetica.core.api.Accessory> accessories;
+  private final java.lang.String outfitName;
+  private final java.lang.String outfitId;
+  private final cc.cosmetica.core.api.NametagConfig nametag;
+  private final cc.cosmetica.core.api.NametagConfig lore;
+  private final boolean upsideDown;
+  static final boolean $assertionsDisabled;
+  private cc.cosmetica.core.api.PlayerCosmetics(gg.cloaks.javaclient.model.Outfit, gg.cloaks.javaclient.model.Lore, gg.cloaks.javaclient.model.Icon, gg.cloaks.javaclient.model.ExternalCape, java.lang.String, java.lang.String, boolean, boolean);
+  public cc.cosmetica.core.api.PlayerCosmetics(cc.cosmetica.core.api.ImageCosmetic, cc.cosmetica.core.api.ImageCosmetic, java.util.Collection<cc.cosmetica.core.api.Accessory>, java.lang.String, java.lang.String, cc.cosmetica.core.api.NametagConfig, cc.cosmetica.core.api.NametagConfig, boolean);
+  public java.util.Optional<java.lang.String> getOutfitId();
+  public java.util.Optional<java.lang.String> getOutfitName();
+  public java.util.Optional<cc.cosmetica.core.api.ImageCosmetic> getCloak();
+  public java.util.Optional<cc.cosmetica.core.api.ImageCosmetic> getElytra();
+  public java.util.Collection<cc.cosmetica.core.api.Accessory> getAccessories();
+  public cc.cosmetica.core.api.NametagConfig getNametag();
+  public java.util.Optional<cc.cosmetica.core.api.NametagConfig> getLore();
+  public boolean isUpsideDown();
+  public void enqueue(java.lang.Runnable, java.lang.Runnable);
+  public java.lang.String toString();
+  public static cc.cosmetica.core.api.PlayerCosmetics fromResponse(gg.cloaks.javaclient.model.PlayerResponse);
+  public static cc.cosmetica.core.api.PlayerCosmetics fromUser(gg.cloaks.javaclient.model.CosmeticaUser);
+  static {};
+}
+Compiled from "HasCosmeticsRenderState.java"
+public interface cc.cosmetica.core.impl.HasCosmeticsRenderState {
+  public abstract <T extends net.minecraft.class_1309> void cosmeticacore$extractCosmeticsOf(T);
+  public abstract java.util.Optional<cc.cosmetica.core.api.Cosmetics> cosmeticacore$getCosmetics();
+}

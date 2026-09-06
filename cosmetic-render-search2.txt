@@ -1,0 +1,40 @@
+﻿
+Path                                                                                                 LineNumber
+----                                                                                                 ----------
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\CosmeticaToast.java                        65
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\CosmeticaToast.java                        75
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\OutfitWheelScreen.java                     39
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java          13
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java          17
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java          20
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java          21
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java          22
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java          41
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java          43
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java          46
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java          89
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java          96
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java         100
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java         105
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java         106
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java         108
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java         115
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java         116
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java         118
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java         125
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java         126
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java         131
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java         132
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java         152
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\mixin\gui\FakePlayerRendererMixin.java         27
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\mixin\gui\FakePlayerRendererMixin.java         28
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\mixin\gui\FakePlayerRendererMixin.java         48
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\mixin\gui\FakePlayerRendererMixin.java         49
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\mixin\gui\FakePlayerRendererMixin.java         60
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\mixin\gui\FakePlayerRendererMixin.java         64
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\mixin\gui\FakePlayerRendererMixin.java         65
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\mixin\gui\FakePlayerRendererMixin.java         77
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\util\NametagUtil.java                          23
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\util\NametagUtil.java                          36
+
+

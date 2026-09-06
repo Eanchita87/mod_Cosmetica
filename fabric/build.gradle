@@ -1,3 +1,4 @@
+
 plugins {
     id "com.github.johnrengelman.shadow" version "8.1.1"
 }
@@ -9,89 +10,262 @@ architectury {
 
 configurations {
     common
-    shadowCommon // Don't use shadow from the shadow plugin since it *excludes* files.
+    shadowCommon
+
     compileClasspath.extendsFrom common
     runtimeClasspath.extendsFrom common
     developmentFabric.extendsFrom common
 }
 
 repositories {
-    maven { url 'https://maven.terraformersmc.com/' }
     maven {
-        url 'https://www.jitpack.io'
+        url = "https://maven.terraformersmc.com/"
+    }
+
+    maven {
+        url = "https://jitpack.io"
+    }
+
+    // Cosmetica Maven
+    maven {
+        url = "https://maven.cosmetica.cc/releases"
     }
 }
 
 dependencies {
-    modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
-    modApi ("net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}") {
+
+    // ==================================================
+    // Fabric Loader
+    // ==================================================
+
+    modImplementation(
+        "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
+    )
+
+
+    // ==================================================
+    // Fabric API
+    // ==================================================
+
+    modApi(
+        "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
+    ) {
         exclude module: "fabric-loader"
     }
-    include(fabricApi.module("fabric-resource-loader-v1", "${project.fabric_api_version}"))
-    include(fabricApi.module("fabric-api-base", "${project.fabric_api_version}"))
 
+    include(
+        fabricApi.module(
+            "fabric-resource-loader-v1",
+            "${rootProject.fabric_api_version}"
+        )
+    )
+
+    include(
+        fabricApi.module(
+            "fabric-api-base",
+            "${rootProject.fabric_api_version}"
+        )
+    )
+
+
+    // ==================================================
     // Cosmetica Core
-    include(modImplementation "cc.cosmetica:cosmetica-core-fabric:${rootProject.core_version}-${rootProject.minecraft_version}")
+    // IMPORTANT:
+    // Bundle core inside final Cosmetica JAR
+    // ==================================================
+
+    include(
+        modImplementation(
+            "cc.cosmetica:cosmetica-core-fabric:" +
+            "${rootProject.core_version}-${rootProject.minecraft_version}"
+        )
+    )
+
+
+    // ==================================================
     // Kupe
-    include(modImplementation "cc.cosmetica:kupe-fabric:${rootProject.kupe_version}-${rootProject.minecraft_version}")
-    // Webp Support
-    include(implementation "com.twelvemonkeys.imageio:imageio-webp:${rootProject.imaging_version}")
-    include "com.twelvemonkeys.imageio:imageio-core:${rootProject.imaging_version}"
-    include "com.twelvemonkeys.imageio:imageio-metadata:${rootProject.imaging_version}"
-    include "com.twelvemonkeys.common:common-lang:${rootProject.imaging_version}"
-    include "com.twelvemonkeys.common:common-io:${rootProject.imaging_version}"
-    include "com.twelvemonkeys.common:common-image:${rootProject.imaging_version}"
+    // IMPORTANT:
+    // Bundle kupe inside final Cosmetica JAR
+    // ==================================================
 
-    // Mod Menu (for Compat)
-    modImplementation "com.terraformersmc:modmenu:17.0.0-beta.2"
+    include(
+        modImplementation(
+            "cc.cosmetica:kupe-fabric:" +
+            "${rootProject.kupe_version}-${rootProject.minecraft_version}"
+        )
+    )
 
-    common(project(path: ":common", configuration: "namedElements")) { transitive false }
-    shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
-}
 
-processResources {
-    inputs.property "version", project.version
+    // ==================================================
+    // WebP Support
+    // ==================================================
 
-    filesMatching("fabric.mod.json") {
-        expand "version": project.version
+    implementation(
+        "com.twelvemonkeys.imageio:imageio-webp:" +
+        "${rootProject.imaging_version}"
+    )
+
+    include(
+        "com.twelvemonkeys.imageio:imageio-webp:" +
+        "${rootProject.imaging_version}"
+    )
+
+    include(
+        "com.twelvemonkeys.imageio:imageio-core:" +
+        "${rootProject.imaging_version}"
+    )
+
+    include(
+        "com.twelvemonkeys.imageio:imageio-metadata:" +
+        "${rootProject.imaging_version}"
+    )
+
+    include(
+        "com.twelvemonkeys.common:common-lang:" +
+        "${rootProject.imaging_version}"
+    )
+
+    include(
+        "com.twelvemonkeys.common:common-io:" +
+        "${rootProject.imaging_version}"
+    )
+
+    include(
+        "com.twelvemonkeys.common:common-image:" +
+        "${rootProject.imaging_version}"
+    )
+
+
+    // ==================================================
+    // Mod Menu
+    // ==================================================
+
+    modImplementation(
+        "com.terraformersmc:modmenu:17.0.0-beta.2"
+    )
+
+
+    // ==================================================
+    // Common
+    // ==================================================
+
+    common(
+        project(
+            path: ":common",
+            configuration: "namedElements"
+        )
+    ) {
+        transitive = false
+    }
+
+    shadowCommon(
+        project(
+            path: ":common",
+            configuration: "transformProductionFabric"
+        )
+    ) {
+        transitive = false
     }
 }
+
+
+// ==================================================
+// Process Resources
+// ==================================================
+
+processResources {
+    inputs.property(
+        "version",
+        project.version
+    )
+
+    filesMatching("fabric.mod.json") {
+        expand(
+            "version": project.version
+        )
+    }
+}
+
+
+// ==================================================
+// Shadow Jar
+// ==================================================
 
 shadowJar {
     exclude "architectury.common.json"
 
-    configurations = [project.configurations.shadowCommon]
+    configurations = [
+        project.configurations.shadowCommon
+    ]
+
     archiveClassifier = "dev-shadow"
 }
 
+
+// ==================================================
+// Remap Jar
+// ==================================================
+
 remapJar {
     injectAccessWidener = true
-    input.set shadowJar.archiveFile
+
+    input.set(
+        shadowJar.archiveFile
+    )
+
     dependsOn shadowJar
 }
 
+
+// ==================================================
+// Sources Jar
+// ==================================================
+
 sourcesJar {
     def commonSources = project(":common").sourcesJar
+
     dependsOn commonSources
-    from commonSources.archiveFile.map { zipTree(it) }
+
+    from(
+        commonSources.archiveFile.map {
+            zipTree(it)
+        }
+    )
 }
 
+
+// ==================================================
+// Components
+// ==================================================
+
 components.java {
-    withVariantsFromConfiguration(project.configurations.shadowRuntimeElements) {
+    withVariantsFromConfiguration(
+        project.configurations.shadowRuntimeElements
+    ) {
         skip()
     }
 }
 
+
+// ==================================================
+// Publishing
+// ==================================================
+
 publishing {
     publications {
         mavenFabric(MavenPublication) {
-            artifactId = rootProject.archives_base_name + "-" + project.name
+
+            artifactId =
+                rootProject.archives_base_name +
+                "-" +
+                project.name
+
             from components.java
         }
     }
 
-    // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
     repositories {
-        // Add repositories to publish to here.
+        // Add publishing repository here if needed
     }
 }
+

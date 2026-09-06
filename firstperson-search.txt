@@ -1,0 +1,23 @@
+﻿
+Path                                                                                                 LineNumber
+----                                                                                                 ----------
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java          13
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java          20
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java          41
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java          96
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java         100
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java         105
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java         106
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java         108
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java         115
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java         116
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java         118
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java         125
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java         126
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java         131
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\gui\player\AccessoriesAttachment.java         132
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\mixin\gui\FakePlayerRendererMixin.java         26
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\mixin\gui\FakePlayerRendererMixin.java         39
+C:\hi\Cosmetica-2\common\src\main\java\cc\cosmetica\cosmetica\mixin\gui\FakePlayerRendererMixin.java         40
+
+

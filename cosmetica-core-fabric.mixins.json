@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "cc.cosmetica.core.fabric.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "minVersion": "0.8",
+  "client": [
+    "PlayerTabOverlayMixin"
+  ],
+  "mixins": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
